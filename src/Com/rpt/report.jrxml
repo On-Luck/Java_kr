@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="821a9154-2f26-4636-8a41-0ea2fe137f8b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="dates" class="java.util.Date">
+		<parameterDescription><![CDATA[дата начала работ с]]></parameterDescription>
+	</parameter>
+	<parameter name="datepo" class="java.util.Date">
+		<parameterDescription><![CDATA[дата начала работ по]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="vid" class="java.lang.String">
+		<fieldDescription><![CDATA[Вид материала]]></fieldDescription>
+	</field>
+	<field name="mat" class="java.lang.String">
+		<fieldDescription><![CDATA[Материал]]></fieldDescription>
+	</field>
+	<field name="treb" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Требуется]]></fieldDescription>
+	</field>
+	<field name="opl" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[оплатил клиент]]></fieldDescription>
+	</field>
+	<field name="nedost" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[недостаток]]></fieldDescription>
+	</field>
+	<field name="stoim" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[стоимость закупки]]></fieldDescription>
+	</field>
+	<variable name="sumStoim" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{stoim}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="50" width="500" height="31" uuid="e31b95c6-dd83-47fa-9fcd-1ca60648ca98"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Дата начала работ с " + (new SimpleDateFormat("dd.MM.yyyy").format($P{dates})) + " по " + (new SimpleDateFormat("dd.MM.yyyy").format($P{datepo}))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-20" y="0" width="595" height="27" uuid="00e2ba73-f062-4e9b-afa1-39e5886dc304"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Отчет]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="27" width="595" height="23" uuid="9d979127-d271-40b4-b45b-5b13a8f9b559"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA["Потребность материалов на заданный период"]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="550" height="29" uuid="f74476b7-edd5-4fcb-9646-39fb25db7c8d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="30" uuid="4bca72d1-c287-4b7d-9bc6-3ec9f6a49bde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Вид материала]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="140" height="30" uuid="ed50ebbf-d3ef-40f2-95b8-9cf536563347"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Материал]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="60" height="30" uuid="1f6004b4-7e1a-486e-bf01-0d0ee284c05c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Требуется]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="90" height="30" uuid="e24baed7-b2e4-4b82-9b9e-6f346c12cac6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Оплачено клиентами]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="60" height="28" uuid="efb676e1-c8b1-4ce6-97d7-74335f8643eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Недостаток]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="-1" width="90" height="30" uuid="2936490d-9d83-4e0a-b135-40a37fea8930"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Стоимость закупки]]></text>
+			</staticText>
+			<line>
+				<reportElement x="460" y="0" width="1" height="30" uuid="60db47f4-db1e-4937-bda0-795ae25d6093"/>
+			</line>
+			<line>
+				<reportElement x="400" y="0" width="1" height="30" uuid="cee2bc2b-e6bc-4dc6-b241-4418f4f8e755"/>
+			</line>
+			<line>
+				<reportElement x="310" y="0" width="1" height="30" uuid="2d907733-fcc0-49ca-b563-f98fba6ad672"/>
+			</line>
+			<line>
+				<reportElement x="250" y="0" width="1" height="30" uuid="0a376352-55a4-4572-9e2c-b5cd2085653e"/>
+			</line>
+			<line>
+				<reportElement x="110" y="-1" width="1" height="30" uuid="37e99985-1ec6-4c04-86ca-f7cd8458aba3"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="26">
+			<textField>
+				<reportElement x="0" y="0" width="110" height="26" uuid="2294e6c9-a936-4f9c-9503-31cc5a4140c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="140" height="26" uuid="ca879c75-054f-401d-b38f-80dc709bb8b7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mat}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###">
+				<reportElement x="250" y="-1" width="60" height="26" uuid="938d515b-df5c-4c1b-9add-e3bc22ba316c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treb}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="310" y="-1" width="90" height="26" uuid="ffa23742-ebfe-4fd7-b2eb-30426d508451"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{opl}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###">
+				<reportElement x="400" y="-1" width="60" height="26" uuid="93090b2e-fbf6-444b-871f-2cbddf96dc1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nedost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="460" y="-1" width="90" height="26" uuid="77ab5f5d-7c5e-4bc5-959d-7b0eba325db6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stoim}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="25" width="550" height="1" uuid="6a406609-c0aa-4021-b7ec-ee4a106c31a2"/>
+			</line>
+			<line>
+				<reportElement x="460" y="0" width="1" height="25" uuid="91781fa8-92ee-49a4-ab59-e2b5496ad7da"/>
+			</line>
+			<line>
+				<reportElement x="400" y="0" width="1" height="25" uuid="d64515fe-4b2e-46c6-8813-73dfc31722de"/>
+			</line>
+			<line>
+				<reportElement x="250" y="0" width="1" height="25" uuid="226c8125-3a32-4b1f-a14d-9fb5cfebf3c2"/>
+			</line>
+			<line>
+				<reportElement x="310" y="0" width="1" height="25" uuid="da3b9c2d-1f45-496e-9f20-cd47cae9dde9"/>
+			</line>
+			<line>
+				<reportElement x="110" y="0" width="1" height="25" uuid="0b307694-8831-4b2a-aa75-1f32f0fe4c68"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="25" uuid="432d30c0-180f-4f12-9979-ab4da58372e7"/>
+			</line>
+			<line>
+				<reportElement x="550" y="0" width="1" height="25" uuid="8d3d44ed-5f6d-4535-81fa-a0c78ddb085d"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="31">
+			<textField pattern="HH:mm:ss    dd.MM.yyyy ">
+				<reportElement x="0" y="10" width="100" height="20" uuid="a9bfbbc4-37ed-44a0-bdce-0b66d9c8226d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="10" width="100" height="20" uuid="9e4c44c0-a607-430b-9969-ae903e679c93"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Стр. " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="10" width="46" height="20" uuid="566ae7fe-daf5-4356-a939-c1d84d49d207"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" из " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="400" height="32" uuid="a806ef79-efe7-4fd1-9637-b10cd64a4f30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Итого стоимость закупки материалов: ]]></text>
+			</staticText>
+			<textField pattern="#,##0.##">
+				<reportElement x="400" y="0" width="120" height="32" uuid="53cce96d-7443-4071-b8e9-a781d0b00105"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumStoim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="520" y="0" width="30" height="32" uuid="ffe116cb-6e22-4d4f-b2fb-b26011e71d32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[руб.]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

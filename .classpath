@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_144"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/postgresql-42.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/asm-all-2.2.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/groovy-1.1-rc-1.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/jasperreports-6.5.1.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/miglayout-4.0.jar"/>
+	<classpathentry kind="lib" path="D:/00.On_Luck/Проекты/org.apache.commons.collections.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
